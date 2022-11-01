@@ -1,18 +1,115 @@
 import plantas.*
 describe "Test de Plantas"  {
 	
-	const menta1 = new Menta()
+	const menta1 = new Menta(altura=0,anioObtencionSemilla=0)
+	const menta2 = new Menta(altura=0,anioObtencionSemilla=0)
+	const soja1= new Soja(altura=0,anioObtencionSemilla=2008)
+	const soja2= new Soja(altura=0,anioObtencionSemilla=2000)
+	const quinoa1=new Quinoa(altura=0,anioObtencionSemilla=2010,horaSol=12)
+	const quinoa2=new Quinoa(altura=0,anioObtencionSemilla=2001,horaSol=9)
+	const quinoa3=new Quinoa(altura=0,anioObtencionSemilla=2020,horaSol=1)
 	
 	method initialize() {
-		menta1.valor(3)
+		menta1.altura(1)
+		menta2.altura(0.3)
+		soja1.altura(2)
+		soja2.altura(0.3)
+		quinoa1.altura(1)
+		quinoa2.altura(2)
+		quinoa3.altura(0.5)
+		
 	}
 	
-	test "Menta - test de ejemplo" {
-		assert.equals(3, menta1.valor())
+	test "Menta - test de semilla" {
+		assert.that(menta1.daNuevasSemillas())
 
 	}
+	test "Menta - test de espacioOcupado"{
+	assert.equals(3,menta1.espacioOcupado())
+	
+	}
+
+	
+	
+	test "Menta2 - test de semilla" {
+		assert.notThat(menta2.daNuevasSemillas())
+
+	}
+	test "Menta2 - test de espacioOcupado"{
+	assert.equals(0.9,menta2.espacioOcupado())
+	
+	}
+	
+	test "soja1 - test de espacioOcupado"{
+	assert.equals(1,soja1.espacioOcupado())
+	
+	}
+	test "soja1 - test de semilla" {
+	assert.that(soja1.daNuevasSemillas())
+
+	}
+	test "soja1 - test de horasol" {
+	assert.equals(9,soja1.horasDeSolTolearadas())
+	}
+	
+		test "soja2 - test de espacioOcupado"{
+	assert.equals(0.15,soja2.espacioOcupado())
+	
+	}
+	test "soja2 - test de semilla" {
+	assert.notThat(soja2.daNuevasSemillas())
+
+	}
+	test "soja2 - test de horasol" {
+	assert.equals(6,soja2.horasDeSolTolearadas())
+	}
+	
+	
+	test "quinoa1- test de horasol"{
+		assert.equals(12,quinoa1.horasDeSolTolearadas())
+	}
+	
+	test "quinoa1- test de semilla "{
+		assert.that(quinoa1.daNuevasSemillas())
+		
+	}
+	
+		test "quinoa1 - test de espacioOcupado"{
+	assert.equals(0.5,quinoa1.espacioOcupado())
+	
+	}
+	
+	
+		
+	test "quinoa2- test de horasol"{
+		assert.equals(9,quinoa2.horasDeSolTolearadas())
+	}
+	
+	test "quinoa2- test de semilla "{
+		assert.that(quinoa2.daNuevasSemillas())
+		
+	}
+	
+		test "quinoa2 - test de espacioOcupado"{
+	assert.equals(0.5,quinoa2.espacioOcupado())
+	
+	}
+	
+	test "quinoa3- test de horasol"{
+		assert.equals(1,quinoa3.horasDeSolTolearadas())
+	}
+	
+	test "quinoa3- test de semilla "{
+		assert.notThat(quinoa3.daNuevasSemillas())
+		
+	}
+	
+		test "quinoa3 - test de espacioOcupado"{
+	assert.equals(0.5,quinoa3.espacioOcupado())
+	
+	}
+	
 	
 }
-
 
 
