@@ -8,6 +8,8 @@ describe "Test de Plantas"  {
 	const quinoa1=new Quinoa(altura=0,anioObtencionSemilla=2010,horaSol=12)
 	const quinoa2=new Quinoa(altura=0,anioObtencionSemilla=2001,horaSol=9)
 	const quinoa3=new Quinoa(altura=0,anioObtencionSemilla=2020,horaSol=1)
+	const sojatras1=new SojaTrangenica(altura=0,anioObtencionSemilla=2000)
+	const hierbB1= new Hierbabuena (altura=2,anioObtencionSemilla=0)
 	
 	method initialize() {
 		menta1.altura(1)
@@ -107,6 +109,14 @@ describe "Test de Plantas"  {
 		test "quinoa3 - test de espacioOcupado"{
 	assert.equals(0.5,quinoa3.espacioOcupado())
 	
+	}
+	
+	test"sojatras1- test de semilla"{
+		assert.notThat(sojatras1.daNuevasSemillas())
+	}
+	
+	test" hierbB1-test de espacioOcupado"{
+		assert.equals(12,hierbB1.espacioOcupado())
 	}
 	
 	

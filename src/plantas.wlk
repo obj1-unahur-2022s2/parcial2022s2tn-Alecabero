@@ -1,3 +1,4 @@
+import parcelas.*
 class Planta {
  	var anioObtencionSemilla
  	var property altura
@@ -8,6 +9,7 @@ class Planta {
  	 	method daNuevasSemillas() = self.esFuerte()
  	 	method espacioOcupado()
  	 	method condAlt()
+ 	 	method estaComodo(parcela)
 }
  
 class Menta inherits Planta {
@@ -15,6 +17,7 @@ class Menta inherits Planta {
  	override method daNuevasSemillas()= altura > 0.4 or self.condAlt()
  	override method espacioOcupado()= altura * 3
  	override method condAlt()= altura > 5
+ 	override method estaComodo(parcela)=parcela.superficie()>6
 }
 class Hierbabuena inherits Menta {
 	override method espacioOcupado()= super()*2
@@ -28,7 +31,8 @@ class Soja inherits Planta {
 	override method daNuevasSemillas()=anioObtencionSemilla > 2007 and altura > 1 or self.condAlt()
 	
 	override method espacioOcupado()=altura /2				
-	override method condAlt()= altura > 4				
+	override method condAlt()= altura > 4			
+		override method estaComodo(parcela)=parcela.horaDeSol == self.horasDeSolTolearadas()
 }
  
 class SojaTrangenica inherits Soja {
@@ -45,3 +49,5 @@ class Quinoa inherits Planta {
 	override method condAlt()= horaSol > 10
 	
 }
+
+
