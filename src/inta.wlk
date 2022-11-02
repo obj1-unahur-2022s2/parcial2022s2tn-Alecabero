@@ -1,4 +1,6 @@
+import parcelas.*
 object inta{
-	method promedioPlantas()=plantas.sum() / parcelas
-	method sustentable()=parcelas>4
+	var property parcela
+	method promedioPlantas(parcelas)=parcelas.plantas().sum() / parcela()
+	method sustentable()=parcela>4
 }

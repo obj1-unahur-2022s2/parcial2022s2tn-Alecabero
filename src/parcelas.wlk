@@ -4,7 +4,7 @@ class Parcela{
  	var property ancho
  	var property largo
  	var horaDeSol
- 	const plantas=[]
+ 	const property plantas=[]
  	
  	method superficie()=ancho*largo
  	method capacidadMaxPlantas()= if(ancho>largo) self.superficie()/5
