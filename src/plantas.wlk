@@ -21,6 +21,7 @@ class Menta inherits Planta {
 }
 class Hierbabuena inherits Menta {
 	override method espacioOcupado()= super()*2
+	override method estaComodo(parcela)=arcela.superficie()>6
 }
 
  
@@ -37,7 +38,7 @@ class Soja inherits Planta {
  
 class SojaTrangenica inherits Soja {
 	override method daNuevasSemillas()=false
-	
+	override method estaComodo(parcela)=parcela.plantas==1
 }
  
 class Quinoa inherits Planta {
@@ -47,7 +48,7 @@ class Quinoa inherits Planta {
 	override method espacioOcupado()=0.5
 	override method daNuevasSemillas()=anioObtencionSemilla<2005 or self.condAlt()
 	override method condAlt()= horaSol > 10
-	
+	override method estaComodo(parcela)=parcela.plantas=0 and  self.altura < 1.5
 }
 
 
